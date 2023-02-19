@@ -10,7 +10,9 @@ import { expressMiddleware } from '@apollo/server/express4';
 import { PubSub } from 'graphql-subscriptions';
 import mongoose from 'mongoose';
 import CommentMoongose from './models/Comment.js';
-const MONGODB = 'mongodb+srv://pipaDev:Linkon@curso-graphql.gakn62l.mongodb.net/?retryWrites=true&w=majority';
+import dotenv from 'dotenv';
+dotenv.config();
+const MONGODB = process.env.MONGODB;
 const port = 4000;
 // necesitaremos los typeDefs y resolvers
 const typeDefs = `
